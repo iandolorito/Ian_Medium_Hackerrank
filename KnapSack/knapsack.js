@@ -1,8 +1,9 @@
 function unboundedKnapsack(k, arr) {
-    const dp = new Array(k + 1).fill(0);
+    const dp = Array(k + 1).fill(0);
+    arr = [...new Set(arr)];
     for (let i = 0; i < arr.length; i++) {
-        for (let j = arr[i]; j <= k; j++) {
-            dp[j] = Math.max(dp[j], dp[j - arr[i]] + arr[i]);
+        for (let w = arr[i]; w <= k; w++) {
+            dp[w] = Math.max(dp[w], dp[w - arr[i]] + arr[i]);
         }
     }
     return dp[k];
