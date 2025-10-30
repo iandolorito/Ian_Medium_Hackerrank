@@ -1,0 +1,1 @@
+This function counts the number of pairs in an array that have a difference of k. It first stores all array elements in a Set for fast lookup. Then, for each number in the array, it checks if the number plus k exists in the set. Each match increments the count, and the function returns the total number of such pairs.
